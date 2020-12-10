@@ -8,6 +8,7 @@ LDLIBS   := -lm -lxcb -lxcb-icccm -lxcb-ewmh
 
 PREFIX    ?= /usr/local
 BINPREFIX ?= $(PREFIX)/bin
+MANPREFIX ?= $(PREFIX)/share/man
 
 SRC := $(wildcard *.c)
 OBJ := $(SRC:.c=.o)
@@ -24,9 +25,12 @@ $(OBJ): Makefile
 install:
 	mkdir -p "$(DESTDIR)$(BINPREFIX)"
 	cp -p $(OUT) "$(DESTDIR)$(BINPREFIX)"
+	mkdir -p "$(DESTDIR)$(MANPREFIX)"/man1
+	cp -p doc/xtitle.1 "$(DESTDIR)$(MANPREFIX)/man1"
 
 uninstall:
 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(OUT)
+	rm -f "$(DESTDIR)$(MANPREFIX)"/man1/xtitle.1
 
 clean:
 	rm -f $(OUT) $(OBJ)

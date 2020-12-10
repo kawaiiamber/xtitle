@@ -1,0 +1,34 @@
+.TH XTITLE 1
+.SH NAME
+xtitle \- A tool to show X window titles
+.SH SYNOPSIS
+.B xtitle
+[\fIOPTIONS\fR] [\fIWID\fR ...]
+.SH DESCRIPTION
+If arguments are given, outputs the title of each arguments, otherwise outputs the title of the active window and continue to output it as it changes if the
+.I snoop
+mode is on.
+.SH OPTIONS
+.TP
+.BR \-h
+Print the synopsis to standard output and exit.
+.TP
+.BR \-v
+Print the version to standard output and exit.
+.TP
+.BR \-s
+Activate
+.I snoop
+mode.
+.TP
+.BR \-e
+Escape the following characters: \`," and \\.
+.TP
+.BR \-i
+Try to retrieve the title from the _NET_WM_VISIBLE_NAME atom
+.TP
+.BR \-f " " \fIFORMAT\fR
+Use the given printf-style format. The only supported sequences are %s (for title), %u (for window id) and \\n.
+.TP
+.BR \-t " " \fINUMBER\fR
+Truncate the title after |\fINUMBER\fR| characters starting at the first (or the last if \fINUMBER\fR is negative) character.
