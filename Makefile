@@ -25,12 +25,12 @@ $(OBJ): Makefile
 install:
 	mkdir -p "$(DESTDIR)$(BINPREFIX)"
 	cp -p $(OUT) "$(DESTDIR)$(BINPREFIX)"
-	mkdir -p "$(DESTDIR)$(MANPREFIX)"/man1
+	mkdir -p "$(DESTDIR)$(MANPREFIX)/man1"
 	cp -p "doc/xtitle.1" "$(DESTDIR)$(MANPREFIX)/man1"
 
 uninstall:
 	rm -f "$(DESTDIR)$(BINPREFIX)"/$(OUT)
-	rm -f "$(DESTDIR)$(MANPREFIX)"/man1/xtitle.1
+	rm -f "$(DESTDIR)$(MANPREFIX)/man1/xtitle.1"
 
 clean:
 	rm -f $(OUT) $(OBJ)
